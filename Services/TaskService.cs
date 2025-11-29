@@ -15,8 +15,7 @@ public class TaskService : ITaskService
 
     public async Task<TaskResponse> CreateTaskAsync(CreateTaskRequest request)
     {
-        // Parse the status string to enum
-        if (!Enum.TryParse<TaskStatus>(request.Status, true, out var statusEnum))
+        if (!Enum.TryParse<Models.TaskStatus>(request.Status, true, out var statusEnum))
         {
             throw new ArgumentException($"Invalid status: {request.Status}");
         }

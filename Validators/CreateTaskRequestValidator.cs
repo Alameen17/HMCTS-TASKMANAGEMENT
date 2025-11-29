@@ -26,6 +26,6 @@ public class CreateTaskRequestValidator : AbstractValidator<CreateTaskRequest>
 
     private bool BeAValidStatus(string status)
     {
-        return Enum.TryParse<TaskStatus>(status, true, out _);
+        return Enum.TryParse<Models.TaskStatus>(status, true, out _);
     }
 }
